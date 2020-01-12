@@ -26,6 +26,7 @@ public class CpachaUtil {
 		'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R',
 		'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
 	};
+	
 	/**
 	 * 字体
 	 */

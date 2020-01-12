@@ -1,7 +1,9 @@
 package com.ischoolbar.programmer.servlet;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +15,7 @@ import com.ischoolbar.programmer.util.CaptchaUtil;
  * @author qq928
  *
  */
-public class Captcha extends HttpServlet {
+public class CaptchaServlet extends HttpServlet {
 
 	/**
 	 * 
@@ -26,16 +28,22 @@ public class Captcha extends HttpServlet {
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
 		String method = request.getParameter("method");
-		if("loginCapcha".equals(method)) {
-			
+		if("loginCaptcha".equals(method)) {
+			this.generateLoginCpacha(request, response);
+			return;
+		}
+		else {
+			response.getWriter().write("error method");
 		}
 		
 	}
 	
-	private void generateLoginCpacha(HttpServletRequest request, HttpServletResponse response) {
-		CaptchaUtil cpachaUtil = new CaptchaUtil();
-		String Vcode = cpachaUtil.generatorVCode();
-		request.getSession().setAttribute("loginCapcha", Vcode);
+	private void generateLoginCpacha(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		CaptchaUtil captcha = new CaptchaUtil();
+		String Vcode = captcha.generatorVCode();
+		request.getSession().setAttribute("loginCaptcha", Vcode);
+		BufferedImage VcodeImage = captcha.generatorRotateVCodeImage(Vcode, true);
+		ImageIO.write(VcodeImage, "gif", response.getOutputStream());
 	}
 
 }

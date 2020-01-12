@@ -6,12 +6,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ischoolbar.programmer.util.CaptchaUtil;
+
 /**
  * Verification Code Servlet
  * @author qq928
  *
  */
-public class CpachaServlet extends HttpServlet {
+public class Captcha extends HttpServlet {
 
 	/**
 	 * 
@@ -23,8 +25,17 @@ public class CpachaServlet extends HttpServlet {
 	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
-
+		String method = request.getParameter("method");
+		if("loginCapcha".equals(method)) {
+			
+		}
 		
+	}
+	
+	private void generateLoginCpacha(HttpServletRequest request, HttpServletResponse response) {
+		CaptchaUtil cpachaUtil = new CaptchaUtil();
+		String Vcode = cpachaUtil.generatorVCode();
+		request.getSession().setAttribute("loginCapcha", Vcode);
 	}
 
 }

@@ -13,7 +13,7 @@ import java.util.Random;
  * 
  * @author llq
  */
-public class CpachaUtil {
+public class CaptchaUtil {
 	
 	/**
 	 * 验证码来源
@@ -65,13 +65,13 @@ public class CpachaUtil {
 	private int disturbline = 3;
 	
 	
-	public CpachaUtil(){}
+	public CaptchaUtil(){}
 	
 	/**
 	 * 指定验证码长度
 	 * @param vcodeLen 验证码长度
 	 */
-	public CpachaUtil(int vcodeLen) {
+	public CaptchaUtil(int vcodeLen) {
 		this.vcodeLen = vcodeLen;
 		this.width = (fontsize+1)*vcodeLen+10;
 	}

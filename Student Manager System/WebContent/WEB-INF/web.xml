@@ -17,11 +17,11 @@
   </error-page>
   <servlet>
   	<description>Verification Code</description>
-  	<servlet-name>CpachaServlet</servlet-name>
-  	<servlet-class>com.ischoolbar.programmer.servlet.CpachaServlet</servlet-class>
+  	<servlet-name>CaptchaServlet</servlet-name>
+  	<servlet-class>com.ischoolbar.programmer.servlet.CaptchaServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>CpachaServlet</servlet-name>
-  	<url-pattern>/CpachaServlet</url-pattern>
+  	<servlet-name>CaptchaServlet</servlet-name>
+  	<url-pattern>/CaptchaServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -92,7 +92,7 @@
       </div>
       <div class="row cl">
         <div class="formControls col-8 col-offset-3">
-          <input class="input-text size-L" name="vcode" type="text" placeholder="Verification code" style="width: 200px;">
+          <input class="input-text size-L" name="vcode" type="text" placeholder="Captcha code" style="width: 200px;">
           <img title="Click for a new code" id="vcodeImg" src="LoginServlet?method=GetVCode"></div>
       </div>
       

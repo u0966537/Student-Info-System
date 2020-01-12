@@ -15,4 +15,13 @@
 	<error-code>500</error-code>
     <location>/500.jsp</location>
   </error-page>
+  <servlet>
+  	<description>Verification Code</description>
+  	<servlet-name>CpachaServlet</servlet-name>
+  	<servlet-class>com.ischoolbar.programmer.servlet.CpachaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CpachaServlet</servlet-name>
+  	<url-pattern>/CpachaServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
